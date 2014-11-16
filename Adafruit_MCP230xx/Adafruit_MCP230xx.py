@@ -96,7 +96,7 @@ class Adafruit_MCP230XX(object):
             if (pin < 8):
                 directionA = self._readandchangepin(MCP23017_IODIRA, pin, mode)
             else:
-                directionB = self._readandchangepin(MCP23017_IODIRB, pin-8, mode) << 8
+                directionB = self._readandchangepin(MCP23017_IODIRB, pin-8, mode)
             self.direction = ((directionB << 8) | directionA)
 
         return self.direction
